@@ -168,20 +168,6 @@ static gboolean vf_release_cb(GtkWidget *widget, GdkEventButton *bevent, gpointe
  *-----------------------------------------------------------------------------
  */
 
-gboolean vf_index_is_selected(ViewFile *vf, gint row)
-{
-	gboolean ret = FALSE;
-
-	switch (vf->type)
-	{
-	case FILEVIEW_LIST: ret = vflist_index_is_selected(vf, row); break;
-	case FILEVIEW_ICON: ret = vficon_index_is_selected(vf, row); break;
-	}
-
-	return ret;
-}
-
-
 guint vf_selection_count(ViewFile *vf, gint64 *bytes)
 {
 	guint count = 0;
